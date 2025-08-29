@@ -75,6 +75,7 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
 set background=light
 
+" restore cursor position (see defaults.vim)
 augroup DvimStartup
     autocmd!
     autocmd BufReadPost *
@@ -129,5 +130,10 @@ let uname = system('uname -r')
 if uname =~ "Microsoft"
     set t_u7=
 endif
+
+try
+    call dvim#setup()
+catch
+endtry
 
 " vim: set ft=vim:

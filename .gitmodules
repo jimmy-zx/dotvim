@@ -1,0 +1,9 @@
+[submodule "pack/dvim/start/ultisnips"]
+	path = pack/dvim/start/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "pack/dvim/start/vim-snippets"]
+	path = pack/dvim/start/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "pack/dvim/start/delimitMate"]
+	path = pack/dvim/start/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
