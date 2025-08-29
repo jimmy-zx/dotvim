@@ -141,4 +141,9 @@ try
 catch
 endtry
 
+try
+    call dvim_lsp#setup()
+catch
+endtry
+
 " vim: set ft=vim:

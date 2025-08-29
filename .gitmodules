@@ -10,3 +10,6 @@
 [submodule "pack/dvim-tex/start/vimtex"]
 	path = pack/dvim-tex/start/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule "pack/dvim-lsp/start/lsp"]
+	path = pack/dvim-lsp/opt/lsp
+	url = https://github.com/yegappan/lsp.git

@@ -10,6 +10,7 @@ dotvim
 | pack       <-- pluggable packages, one can choose any subset
 | | dvim     <-- the basic plugin pack
 | | dvim-tex <-- TeX plugin pack
+| | dvim-lsp <-- Lsp plugin pack
 | | ...
 | `
 `
@@ -28,4 +29,6 @@ ln -s $PWD/vimrc ~/.vim/vimrc
 ```bash
 mkdir -p ~/.vim/pack
 ln -s $PWD/pack/dvim ~/.vim/pack/dvim
+ln -s $PWD/pack/dvim-tex ~/.vim/pack/dvim-tex
+ln -s $PWD/pack/dvim-lsp ~/.vim/pack/dvim-lsp
 ```
