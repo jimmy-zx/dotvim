@@ -6,9 +6,10 @@ Pluggable vim configurations.
 
 ```
 dotvim
-| vimrc  <-- the main configuration file
-| pack   <-- pluggable packages, one can choose any subset
-| | dvim <-- the basic plugin pack
+| vimrc      <-- the main configuration file
+| pack       <-- pluggable packages, one can choose any subset
+| | dvim     <-- the basic plugin pack
+| | dvim-tex <-- TeX plugin pack
 | | ...
 | `
 `

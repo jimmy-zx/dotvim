@@ -7,3 +7,6 @@
 [submodule "pack/dvim/start/delimitMate"]
 	path = pack/dvim/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "pack/dvim-tex/start/vimtex"]
+	path = pack/dvim-tex/start/vimtex
+	url = https://github.com/lervag/vimtex.git

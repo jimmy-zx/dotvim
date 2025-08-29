@@ -136,4 +136,9 @@ try
 catch
 endtry
 
+try
+    call dvim_tex#setup()
+catch
+endtry
+
 " vim: set ft=vim:
