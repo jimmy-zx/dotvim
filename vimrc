@@ -73,6 +73,7 @@ set statusline+=%w%h%m%r                 " Options
 set statusline+=\ [%{&ff}/%Y]            " Filetype
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
+set termguicolors
 set background=light
 
 " restore cursor position (see defaults.vim)
@@ -131,19 +132,18 @@ if uname =~ "Microsoft"
     set t_u7=
 endif
 
-try
-    call dvim#setup()
-catch
-endtry
+let s:packages = ["dvim", "dvim_lsp", "dvim_tex"]
 
-try
-    call dvim_tex#setup()
-catch
-endtry
-
-try
-    call dvim_lsp#setup()
-catch
-endtry
+for s:package in s:packages
+    let s:package_probed = v:false
+    try
+        call function(s:package . "#probe")()
+        let s:package_probed = v:true
+    catch
+    endtry
+    if s:package_probed
+        call function(s:package . "#setup")()
+    endif
+endfor
 
 " vim: set ft=vim:
