@@ -18,6 +18,11 @@ function! dvim_lsp#setup()
                  \          },
                  \      },
                  \ }])
+    call LspAddServer([#{name: 'clangd',
+                     \   filetype: ['c', 'cpp'],
+                     \   path: 'clangd',
+                     \   args: ['--background-index', '--clang-tidy']
+                     \ }])
     call LspOptionsSet(#{
                     \   showDiagOnStatusLine: v:true,
                     \ })
