@@ -21,7 +21,7 @@ set ttyfast
 set ttimeoutlen=1
 set lazyredraw
 set writebackup
-set shortmess+=filmnrxoOtT
+set shortmess=filmnrxoOtT
 
 set ignorecase
 set smartcase
