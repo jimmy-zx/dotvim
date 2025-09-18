@@ -119,6 +119,10 @@ augroup DvimAsm
     autocmd FileType gas setlocal commentstring=#%s
 augroup END
 
+if empty(v:servername) && exists('*remote_startserver')
+    call remote_startserver('VIM')
+endif
+
 " neovim support
 if has('nvim')
     set viminfo=<800,'10,/50,:100,h,f0,n~/.config/nvim/viminfo
