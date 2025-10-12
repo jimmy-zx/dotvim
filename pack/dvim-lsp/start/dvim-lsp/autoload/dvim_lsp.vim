@@ -23,6 +23,11 @@ function! dvim_lsp#setup()
                      \   path: 'clangd',
                      \   args: ['--background-index', '--clang-tidy']
                      \ }])
+    call LspAddServer([#{name: 'solidity',
+                     \   filetype: ['solidity'],
+                     \   path: 'npx',
+                     \   args: ["nomicfoundation-solidity-language-server", "--stdio"]
+                     \ }])
     call LspOptionsSet(#{
                     \   showDiagOnStatusLine: v:true,
                     \ })
