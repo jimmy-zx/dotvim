@@ -13,3 +13,6 @@
 [submodule "pack/dvim-lsp/start/lsp"]
 	path = pack/dvim-lsp/opt/lsp
 	url = https://github.com/yegappan/lsp.git
+[submodule "pack/dvim/start/vim-easy-align"]
+	path = pack/dvim/start/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
