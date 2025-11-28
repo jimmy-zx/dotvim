@@ -28,7 +28,27 @@ function! dvim_lsp#setup()
                      \   path: 'npx',
                      \   args: ["nomicfoundation-solidity-language-server", "--stdio"]
                      \ }])
+    call LspAddServer([
+                \     #{
+                \         name: 'tinymist',
+                \         filetype: ['typst'],
+                \         path: 'tinymist',
+                \         args: ["lsp"],
+                \         initializationOptions: #{
+                \             settings: #{
+                \                 exportPdf: 'onType',
+                \                 outPath: '$root/target/$dir/$name',
+                \             },
+                \         },
+                \     }
+                \ ])
+
     call LspOptionsSet(#{
                     \   showDiagOnStatusLine: v:true,
                     \ })
+    nnoremap <silent> <localleader>tl :call g:LspRequestCustom(
+        \ 'tinymist',
+        \ 'workspace/executeCommand',
+        \ {'command': 'tinymist.startDefaultPreview'}
+        \ )<CR>
 endfunction
