@@ -55,7 +55,7 @@ function! vim_typst#setup()
         \           "event": "panelScrollTo",
         \           "filepath": expand("%:p"),
         \           "character": col("."),
-        \           "line": line("."),
+        \           "line": line(".") - 1,
         \       },
         \   ]
         \ },
