@@ -20,12 +20,8 @@ function! vim_typst#setup()
                 \         name: 'tinymist',
                 \         filetype: ['typst'],
                 \         path: 'tinymist',
-                \         args: ['lsp'],
+                \         args: ['lsp', '--mirror', 'stdout'],
                 \         initializationOptions: #{
-                \             settings: #{
-                \                 exportPdf: 'onType',
-                \                 outPath: '$root/target/$dir/$name',
-                \             },
                 \         },
                 \         customRequestHandlers: {
                 \             'window/showDocument': function('HandleShowDocument'),
@@ -39,6 +35,29 @@ function! vim_typst#setup()
     nnoremap <silent> <localleader>tl :call g:LspRequestCustom(
         \ 'tinymist',
         \ 'workspace/executeCommand',
-        \ {'command': 'tinymist.startDefaultPreview'}
+        \ {
+        \   'command': 'tinymist.doStartBrowsingPreview',
+        \   'arguments': [[
+        \       "--task-id=default_preview",
+        \       "--data-plane-host=127.0.0.1:0",
+        \       "--open",
+        \   ]]
+        \ }
+        \ )<CR>
+    nnoremap <silent> <localleader>tv :call g:LspRequestCustom(
+        \ 'tinymist',
+        \ 'workspace/executeCommand',
+        \ {
+        \   'command': 'tinymist.scrollPreview',
+        \   'arguments': [
+        \       'default_preview',
+        \       {
+        \           "event": "panelScrollTo",
+        \           "filepath": expand("%:p"),
+        \           "character": col("."),
+        \           "line": line("."),
+        \       },
+        \   ]
+        \ },
         \ )<CR>
 endfunction
